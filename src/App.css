@@ -1,38 +1,399 @@
-.App {
+/* Global Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #e0f2fe, #ffffff);
+  color: #1f2937;
+}
+
+.app-container {
+  max-width: 700px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Header */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.app-header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #0ea5e9;
+}
+
+.app-header p {
+  font-size: 0.95rem;
+  color: #475569;
+}
+
+.app-header select {
+  padding: 6px 10px;
+  border-radius: 12px;
+  border: 1px solid #cbd5e1;
+  font-size: 0.875rem;
+  background-color: #ffffff;
+}
+
+/* Form Container */
+.form-container {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
+  transition: transform 0.2s;
+}
+
+.form-container:hover {
+  transform: translateY(-2px);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.field label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #334155;
+}
+
+input, select {
+  padding: 10px 14px;
+  border-radius: 14px;
+  border: 1px solid #cbd5e1;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+input:focus, select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 5px rgba(59,130,246,0.3);
+}
+
+/* Chips */
+.chips-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid #cbd5e1;
+  background-color: #f1f5f9;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+}
+
+.chip.active {
+  background-color: #3b82f6;
+  color: #ffffff;
+  border-color: #1e40af;
+}
+
+.chip:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Custom Skill Input */
+.custom-skill {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.custom-skill input {
+  flex: 1;
+}
+
+.custom-skill button {
+  padding: 10px 16px;
+  border-radius: 14px;
+  border: 1px solid #cbd5e1;
+  background-color: #e2e8f0;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.custom-skill button:hover {
+  background-color: #cbd5e1;
+}
+
+/* Action Buttons */
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.primary-btn {
+  flex: 1;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 16px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.primary-btn:hover {
+  background-color: #2563eb;
+  transform: translateY(-2px);
+}
+
+.secondary-btn {
+  flex: 1;
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  padding: 12px 20px;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.secondary-btn:hover {
+  background-color: #f1f5f9;
+  transform: translateY(-2px);
+}
+
+/* Notice */
+.notice {
+  font-size: 0.75rem;
+  color: #64748b;
+  margin-top: 12px;
+}
+
+/* Results Section */
+.results-container h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #1e3a8a;
+}
+
+.no-results {
+  border: 2px dashed #cbd5e1;
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+  color: #64748b;
+  font-size: 0.9rem;
+  background: #f1f5f9;
+}
+
+/* Card */
+.card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 18px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.2s;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.card-header h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1e40af;
+}
+
+.card-header p {
+  margin: 4px 0 0 0;
+  font-size: 0.85rem;
+  color: #475569;
+}
+
+.mode-badge {
+  font-size: 0.75rem;
+  padding: 4px 8px;
+  border-radius: 14px;
+  border: 1px solid #cbd5e1;
+  background-color: #e0f2fe;
+  font-weight: 600;
+}
+
+/* Card Details */
+.card-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+}
+
+.card-details div {
+  background-color: #f0f9ff;
+  padding: 6px 10px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Card Skills */
+.card-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.skill-badge {
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 14px;
+  border: 1px solid #cbd5e1;
+  background-color: #dbeafe;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Card Apply Button */
+.primary-btn {
+  width: 100%;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Footer */
+footer {
+  text-align: center;
+  font-size: 0.75rem;
+  color: #475569;
+  margin-top: 20px;
+  padding: 10px 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Responsive Design */
+@media (max-width: 640px) {
+  .app-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .actions {
+    flex-direction: column;
+  }
+  .custom-skill {
+    flex-direction: column;
+  }
+  .card-details {
+    flex-direction: column;
   }
 }
+/* Global */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background: linear-gradient(135deg, #a5f3fc, #f0f9ff);
+  overflow-x: hidden;
+}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Glassmorphism cards */
+.card {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.2);
+}
+
+/* Gradient buttons */
+.primary-btn {
+  background: linear-gradient(90deg, #4f46e5, #8b5cf6);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 16px;
+  padding: 14px 20px;
+  transition: all 0.3s;
+}
+
+.primary-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4);
+}
+
+/* Skill badges with icon support */
+.skill-badge {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #fbcfe8, #f9a8d4);
+  color: #fff;
+  font-weight: 500;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: transform 0.2s;
 }
 
-.App-link {
-  color: #61dafb;
+.skill-badge:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Floating bubbles background */
+@keyframes float {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(45deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  animation: float 8s infinite ease-in-out;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .card {
+    padding: 16px;
   }
-  to {
-    transform: rotate(360deg);
+  .skill-badge {
+    font-size: 0.75rem;
   }
 }
