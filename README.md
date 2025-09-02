@@ -1,3 +1,6 @@
+LINK OF WORKING PROTOTYPE:
+https://internship-scheme-prototype.vercel.app/
+
 # PM Internship Recommender (Frontend Prototype)
 
 A **mobile-first, lightweight, interactive React app** to help users find suitable PM internships based on their skills, education, location, and mode preference.
