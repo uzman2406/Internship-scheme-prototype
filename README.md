@@ -24,17 +24,7 @@ A **mobile-first, lightweight, interactive React app** to help users find suitab
 ```bash
 git clone https://github.com/uzman2406/PM-Internship-Recommender.git
 cd PM-Internship-Recommender
-Install dependencies:
-
-bash
-Copy code
-npm install
-Start the development server:
-
-bash
-Copy code
-npm start
-Open the app in your browser at http://localhost:3000.
+Install dependencies
 
 Folder Structure
 bash
