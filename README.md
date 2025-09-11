@@ -1,107 +1,94 @@
-# React
+🎯 AI-Based Internship Recommendation Engine – PM Internship Scheme Prototype
 
-A modern React-based project utilizing the latest frontend technologies and tools for building responsive web applications.
+This project is a prototype for the Smart India Hackathon (SIH) problem statement 25034, which aims to build an AI-based recommendation engine for the PM Internship Scheme. The system helps students and first-time applicants discover the most relevant internships based on their profile, academic background, interests, and location.
 
-## 🚀 Features
+✨ Features
 
-- **React 18** - React version with improved rendering and concurrent features
-- **Vite** - Lightning-fast build tool and development server
-- **Redux Toolkit** - State management with simplified Redux setup
-- **TailwindCSS** - Utility-first CSS framework with extensive customization
-- **React Router v6** - Declarative routing for React applications
-- **Data Visualization** - Integrated D3.js and Recharts for powerful data visualization
-- **Form Management** - React Hook Form for efficient form handling
-- **Animation** - Framer Motion for smooth UI animations
-- **Testing** - Jest and React Testing Library setup
+📌 Personalized Recommendations – Suggests 3–5 most relevant internships (not overwhelming lists).
 
-## 📋 Prerequisites
+🎓 Profile-Based Matching – Uses education, skills, sector interests, and location preferences.
 
-- Node.js (v14.x or higher)
-- npm or yarn
+📱 Mobile-Friendly UI – Built with ReactJS + Bootstrap, optimized for low digital literacy users.
 
-## 🛠️ Installation
+🌐 Multi-Language Ready – Can be extended with regional language support.
 
-1. Install dependencies:
-   ```bash
-   npm install
-   # or
-   yarn install
-   ```
-   
-2. Start the development server:
-   ```bash
-   npm start
-   # or
-   yarn start
-   ```
+⚡ Lightweight AI Engine – Rule-based / ML-light backend in Django for scalability.
 
-## 📁 Project Structure
+🛠 Seamless Integration – Easy to plug into the existing PM Internship Scheme portal.
 
-```
-react_app/
-├── public/             # Static assets
-├── src/
-│   ├── components/     # Reusable UI components
-│   ├── pages/          # Page components
-│   ├── styles/         # Global styles and Tailwind configuration
-│   ├── App.jsx         # Main application component
-│   ├── Routes.jsx      # Application routes
-│   └── index.jsx       # Application entry point
-├── .env                # Environment variables
-├── index.html          # HTML template
-├── package.json        # Project dependencies and scripts
-├── tailwind.config.js  # Tailwind CSS configuration
-└── vite.config.js      # Vite configuration
-```
+🏗️ Tech Stack
+Frontend
 
-## 🧩 Adding Routes
+⚛️ React.js
 
-To add new routes to the application, update the `Routes.jsx` file:
+🎨 Bootstrap 5
 
-```jsx
-import { useRoutes } from "react-router-dom";
-import HomePage from "pages/HomePage";
-import AboutPage from "pages/AboutPage";
+Backend
 
-const ProjectRoutes = () => {
-  let element = useRoutes([
-    { path: "/", element: <HomePage /> },
-    { path: "/about", element: <AboutPage /> },
-    // Add more routes as needed
-  ]);
+🐍 Django (REST Framework)
 
-  return element;
-};
-```
+🔎 Recommendation Engine (Rule-based / ML-light)
 
-## 🎨 Styling
+Others
 
-This project uses Tailwind CSS for styling. The configuration includes:
+SQLite / PostgreSQL (Database)
 
-- Forms plugin for form styling
-- Typography plugin for text styling
-- Aspect ratio plugin for responsive elements
-- Container queries for component-specific responsive design
-- Fluid typography for responsive text
-- Animation utilities
+Git & GitHub for version control
 
-## 📱 Responsive Design
+📂 Project Structure
+Internship-scheme-prototype/
+│── backend/            # Django backend
+│   ├── internship/     # Core Django app
+│   ├── manage.py
+│   └── requirements.txt
+│
+│── frontend/           # ReactJS frontend
+│   ├── public/
+│   ├── src/
+│   ├── package.json
+│   └── README.md
+│
+│── .gitignore
+│── README.md
 
-The app is built with responsive design using Tailwind CSS breakpoints.
+🚀 Getting Started
+1️⃣ Clone the repository
+git clone https://github.com/uzman2406/Internship-scheme-prototype.git
+cd Internship-scheme-prototype
 
+2️⃣ Setup Backend (Django)
+cd backend
+pip install -r requirements.txt
+python manage.py migrate
+python manage.py runserver
 
-## 📦 Deployment
+3️⃣ Setup Frontend (ReactJS)
+cd frontend
+npm install
+npm start
 
-Build the application for production:
+4️⃣ Access App
 
-```bash
-npm run build
-```
+Frontend: http://localhost:3000
 
-## 🙏 Acknowledgments
+Backend API: http://localhost:8000/api/
 
-- Built with [Rocket.new](https://rocket.new)
-- Powered by React and Vite
-- Styled with Tailwind CSS
+📌 Future Scope
 
-Built with ❤️ on Rocket.new
+🤖 Smarter ML Models for recommendation
+
+🗣️ Regional language support (Hindi, Bengali, Tamil, etc.)
+
+🌍 Offline-first capability for rural/low-network areas
+
+🧩 Integration with PM Internship Portal
+
+🤝 Contributing
+
+Fork the repo
+
+Create a new branch (feature-xyz)
+
+Commit your changes
+
+Push to your fork and create a Pull Request
